@@ -1,6 +1,65 @@
-<!-- ordem_servico_list.html --->
+<!-- ordem_servico_list.html -->
 {% extends "base.html" %}
+
+{% load widget_tweaks %}
 
 {% block content %}
     <h1>Adicionar ordem de serviço</h1>
+    <form>
+        <div class="form-group row">
+            <label class="col-sm-2 col-form-label">Cliente</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" placeholder="Cliente">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-sm-2 col-form-label">Situação</label>
+            <div class="col-sm-10">
+                {% render_field form.situacao class="form-control" %}
+            </div>
+        </div>
+        <p>Endereço</p>
+        <p>Bairro</p>
+        <div class="form-group row">
+            <label class="col-sm-2 col-form-label">Serviço</label>
+            <div class="col-sm-10">
+                {% render_field form.servico class="form-control" %}
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-sm-2 col-form-label">Valor</label>
+            <div class="col-sm-10">
+                {% render_field form.valor class="form-control" min="0" step="0.01" %}
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-sm-2 col-form-label">Próxima visita</label>
+            <div class="col-sm-10">
+                {% render_field form.proxima_visita class="form-control" %}
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-sm-10">
+                <button type="submit" class="btn btn-primary">Adicionar</button>
+            </div>
+        </div>
+    </form>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Descrição (Serviço)</th>
+                <th>Valor</th>
+                <th>Próxima visita</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>2</td>
+                <td>3</td>
+                <td>4</td>
+            </tr>
+        </tbody>
+    </table>
 {% endblock content %}

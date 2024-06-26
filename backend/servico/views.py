@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from .models import OrdemServico
+from .forms import OrdemServicoForm
 
-# Create your views here.
 def ordem_servico_list(request):
     template_name = 'servico/ordem_servico_list.html'
     object_list = OrdemServico.objects.all()
@@ -10,8 +10,10 @@ def ordem_servico_list(request):
     }
     return render(request, template_name, context)
 
-def ordem_servico_create(request, pk):
-    ...
+def ordem_servico_create(request):
+    template_name = 'servico/ordem_servico_form.html'
+    context = {'form': OrdemServicoForm}
+    return render(request, template_name, context)
 
 def ordem_servico_detail(request, pk):
     template_name = 'servico/ordem_servico_detail.html'

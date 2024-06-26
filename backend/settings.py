@@ -23,6 +23,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     # others apps
     'django_extensions',
+    'widget_tweaks',
     # my apps
     'backend.core',
     'backend.crm',

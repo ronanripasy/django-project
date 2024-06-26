@@ -1,8 +1,11 @@
-<!-- ordem_servico_list.html --->
+<!-- ordem_servico_list.html -->
 {% extends "base.html" %}
 
 {% block content %}
     <h1>Ordens de serviço</h1>
+
+    <a href="{% url 'servico:ordem_servico_create' %}" class="btn btn-primary">Adicionar</a>
+
     <table class="table">
         <thead>
             <tr>
